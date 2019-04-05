@@ -8,7 +8,7 @@ const app = express();
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:/UserInformation', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:/TestUserInformation', { useNewUrlParser: true });
 
 //body parser
 app.use(bodyParser.urlencoded({ extended: true }))

@@ -16,7 +16,7 @@ questionData.save()
 .then(data => {
   res.json(data);
 }).catch(err => {
-  res.status(400).send({ message: 'Question does not found' });
+  res.status(400).send({ message: err });
 });
 };
 
@@ -39,5 +39,5 @@ exports.questionswithOptions = (req, res, next) => {
       err.statusCode = 500;
     }
     next(err);
-  });
+  })
 };

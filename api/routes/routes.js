@@ -12,28 +12,28 @@ const routes = (app) => {
   app.route('/login')
   .post(userLogin)
 
-  app.route('/getUsers')
+  app.route('/users')
   .get(getAllUsers)
 
-  app.route('/createQuestion')
+  app.route('/questions')
   .post(isAuth, createQuestion)
 
-  app.route('/createOption')
+  app.route('/options')
   .post(isAuth, createOptions)
 
-  app.route('/getQuestionsAndOptions')
+  app.route('/questionsAndoptions')
   .get(isAuth, questionswithOptions)
 
-  app.route('/getUserById')
+  app.route('/user/:id')
   .get(isAuth, getUserById)
 
-  app.route('/createQuetsionforUser')
+  app.route('/quetsionforuser')
   .post(isAuth, createQuestionforUser)
 
-  app.route('/creategroup')
+  app.route('/group')
   .post(isAuth, creategroup)
 
-  app.route('/getallGroup')
+  app.route('/allgroups')
   .get(isAuth, getallGroup)  
 }
 
