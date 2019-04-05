@@ -1,10 +1,10 @@
 import { userSignup, userLogin, getAllUsers } from '../controller/userController';
 import { createQuestion, questionswithOptions } from '../controller/questionController';
 import { createOptions } from '../controller/optionsController';
-import { getuserid, createQuestionforUser} from '../controller/userquestionController';
-import {creategroup,  getallGroup} from '../controller/groupsController';
+import { getUserById, createQuestionforUser } from '../controller/userquestionController';
+import { creategroup, getallGroup } from '../controller/groupController';
 import isAuth from '../middleware/is-Auth';
- 
+
 const routes = (app) => {
   app.route('/signup')
   .post(userSignup)
@@ -24,8 +24,8 @@ const routes = (app) => {
   app.route('/getQuestionsAndOptions')
   .get(isAuth, questionswithOptions)
 
-  app.route('/getuserid')
-  .get(isAuth, getuserid)
+  app.route('/getUserById')
+  .get(isAuth, getUserById)
 
   app.route('/createQuetsionforUser')
   .post(isAuth, createQuestionforUser)
@@ -34,11 +34,7 @@ const routes = (app) => {
   .post(isAuth, creategroup)
 
   app.route('/getallGroup')
-  .get(isAuth, getallGroup)
-
- 
-
-  
+  .get(isAuth, getallGroup)  
 }
 
 export default routes;
