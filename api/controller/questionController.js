@@ -25,7 +25,7 @@ exports.questionswithOptions = (req, res, next) => {
     $lookup: {
       from: "options",
       localField: "_id",
-      foreignField: 'questions',
+      foreignField: 'questionid',
       as: "options"
     }
   }])
