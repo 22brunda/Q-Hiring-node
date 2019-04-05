@@ -10,8 +10,8 @@ exports.creategroup = (req,res,next) => {
   const { groupname, createdBy } = req.body;
 
   const groups = new Group({
-    groupname:groupname,
-    createdBy:createdBy
+    groupname,
+    createdBy
   })
   groups.save()
   .then(result => {

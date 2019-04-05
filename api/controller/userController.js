@@ -21,7 +21,7 @@ exports.userSignup = (req, res) => {
       city,
       password
     }
-    UserModel.find({email: req.body.email})
+    UserModel.find({ email: email })
     .then(data => {
       if (data != null && data != ''){
         res.send('User already exists');
